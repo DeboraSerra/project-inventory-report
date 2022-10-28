@@ -19,6 +19,9 @@ def test_relatorio_produto():
         n_de_serie,
         armazenamento,
     )
-    expected = f"O produto {nome_produto} fabricado em {str(fabricacao)} por {nome_empresa} com validade até {str(validade)} precisa ser armazenado {armazenamento}."
+    expected1 = f"O produto {nome_produto} fabricado em {str(fabricacao)}"
+    expected2 = f" por {nome_empresa} com validade até {str(validade)}"
+    expected3 = f" precisa ser armazenado {armazenamento}."
+    expected = expected1 + expected2 + expected3
 
     assert str(product) == expected
