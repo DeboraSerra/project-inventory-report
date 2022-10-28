@@ -1,4 +1,3 @@
-from datetime import date
 from inventory_report.reports.simple_report import (
     SimpleReport,
     validade_mais_proxima,
