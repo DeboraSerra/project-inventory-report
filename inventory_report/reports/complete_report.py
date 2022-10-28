@@ -18,16 +18,15 @@ class CompleteReport(SimpleReport):
         validade = validade_mais_proxima(validades)
         fabricacao = fabricacao_mais_antiga(fabricacoes)
         empresa = empresa_com_mais_produtos(empresa_qnt_produtos)
-        for empresa, qnt in empresa_qnt_produtos.items():
-            print(empresa, qnt)
         produtos_por_empresa = [
             f"- {empresa}: {qnt}\n"
             for empresa, qnt in empresa_qnt_produtos.items()
         ]
-        print(produtos_por_empresa)
+        to_render = "".join(produtos_por_empresa)
         return (
             f"Data de fabricação mais antiga: {str(fabricacao)}\n"
             f"Data de validade mais próxima: {str(validade)}\n"
             f"Empresa com mais produtos: {empresa}\n"
-            f"Produtos estocados por empresa:\n".join(produtos_por_empresa)
+            f"Produtos estocados por empresa:\n"
+            f"{to_render}"
         )
